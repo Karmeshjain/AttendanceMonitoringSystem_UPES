@@ -71,7 +71,7 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             // you can check the result and show a message to the user
             // if login success then navigate to next activity otherwise show error message
             //Received json we can parse here
-
+           //Add Code
             Intent intent = new Intent(context, DetailsActivity.class);
             intent.putExtra("result_string", result);
             context.startActivity(intent);
