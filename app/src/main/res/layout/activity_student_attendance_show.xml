@@ -31,21 +31,9 @@
 
 
 
-    <Button
-        android:id="@+id/course1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take Photos"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-
-    <Button
-        android:id="@+id/submitPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Photos"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_red_dark" />
 
 </LinearLayout>

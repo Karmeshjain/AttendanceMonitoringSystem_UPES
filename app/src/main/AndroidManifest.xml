@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceMonitoringSystemUpes">
-        <activity android:name=".activities.AttendanceList"></activity>
+        <activity android:name=".activities.StudentAttendanceShow"></activity>
+        <activity android:name=".activities.AttendanceList" />
         <activity android:name=".activities.AttendanceFaculty" />
         <activity android:name=".activities.DetailsActivity" />
         <activity android:name=".activities.MainActivity">
