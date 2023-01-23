@@ -28,6 +28,7 @@ public class AttendanceFaculty extends AppCompatActivity {
     private String facultyName;
     private String roomNo;
     private Button takePhotosButton;
+    private Button submitPhotosButton;
     private TextView courseNameTextView,facultyNameTextView,roomNoTextView;
 
     private void takeMultiplePhotos() {
@@ -71,12 +72,21 @@ public class AttendanceFaculty extends AppCompatActivity {
          facultyNameTextView = findViewById(R.id.facultyName);
          roomNoTextView = findViewById(R.id.room_no);
         takePhotosButton = findViewById(R.id.course1);
+        submitPhotosButton = findViewById(R.id.submitPhoto);
         Intent intent = getIntent();
         jsonString = intent.getStringExtra("result_string");
         parseJsonString(jsonString);
        // takeMultiplePhotos();
         String result=sendPhotosToApi();
-        
+        submitPhotosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code to execute when the button is clicked
+                Intent showList = new Intent(AttendanceFaculty.this, AttendanceList.class);
+                showList.putExtra("result_string", result);
+                startActivity(showList);
+            }
+        });
     }
 
     private String sendPhotosToApi()
