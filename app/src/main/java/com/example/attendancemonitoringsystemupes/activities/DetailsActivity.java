@@ -1,4 +1,4 @@
-package com.example.attendancemonitoringsystemupes;
+package com.example.attendancemonitoringsystemupes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.attendancemonitoringsystemupes.CoursesTaskApi;
+import com.example.attendancemonitoringsystemupes.Person;
+import com.example.attendancemonitoringsystemupes.R;
 
 public class DetailsActivity extends AppCompatActivity {
 

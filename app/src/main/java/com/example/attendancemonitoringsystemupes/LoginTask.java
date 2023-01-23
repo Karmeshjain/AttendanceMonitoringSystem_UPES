@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
+
+import com.example.attendancemonitoringsystemupes.activities.DetailsActivity;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

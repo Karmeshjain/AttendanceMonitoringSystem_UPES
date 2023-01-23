@@ -1,4 +1,4 @@
-package com.example.attendancemonitoringsystemupes;
+package com.example.attendancemonitoringsystemupes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -8,8 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.attendancemonitoringsystemupes.R;
 
 import java.io.File;
 import java.io.IOException;
@@ -71,7 +74,16 @@ public class AttendanceFaculty extends AppCompatActivity {
         Intent intent = getIntent();
         jsonString = intent.getStringExtra("result_string");
         parseJsonString(jsonString);
-        takeMultiplePhotos();
+       // takeMultiplePhotos();
+        String result=sendPhotosToApi();
+        
+    }
+
+    private String sendPhotosToApi()
+    {
+        String result="";
+
+       return result;
     }
 
     private void parseJsonString(String jsonString)
@@ -80,6 +92,13 @@ public class AttendanceFaculty extends AppCompatActivity {
         facultyNameTextView.setText(facultyName);
         roomNoTextView.setText(roomNo);
         takePhotosButton.setText("Button name from json");
+        takePhotosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code to execute when the button is clicked
+                takeMultiplePhotos();
+            }
+        });
 
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
