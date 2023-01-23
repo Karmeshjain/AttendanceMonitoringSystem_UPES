@@ -1,4 +1,4 @@
-package com.example.attendancemonitoringsystemupes;
+package com.example.attendancemonitoringsystemupes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.attendancemonitoringsystemupes.LoginTask;
+import com.example.attendancemonitoringsystemupes.R;
 
 public class MainActivity extends AppCompatActivity {
 
