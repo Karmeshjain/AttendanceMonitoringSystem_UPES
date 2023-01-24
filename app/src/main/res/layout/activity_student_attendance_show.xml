@@ -29,9 +29,8 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-
-
     <View
+        android:id="@+id/attendanceColour"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@android:color/holo_red_dark" />

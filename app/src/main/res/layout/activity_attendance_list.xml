@@ -5,13 +5,38 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/showAttendance"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
         android:text="Attendance List" />
+
+
+    <TextView
+        android:id="@+id/showAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Jay:2,priyanshu:1" />
+
+    <Button
+        android:id="@+id/sendAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/commitAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Commit"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
