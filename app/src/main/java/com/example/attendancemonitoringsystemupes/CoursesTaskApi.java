@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.attendancemonitoringsystemupes.activities.AttendanceFaculty;
+import com.example.attendancemonitoringsystemupes.activities.StudentAttendanceShow;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -73,7 +74,15 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             // if login success then navigate to next activity otherwise show error message
             //Received json we can parse here
            //Add Code
-            Intent intent = new Intent(context, AttendanceFaculty.class);
+            String type="";
+            Intent intent;
+            if(type=="Faculty") {
+                intent = new Intent(context, AttendanceFaculty.class);
+            }
+            else
+            {
+                intent = new Intent(context, StudentAttendanceShow.class);
+            }
             intent.putExtra("result_string", result);
             context.startActivity(intent);
         } else {
