@@ -1,4 +1,4 @@
-package com.example.attendancemonitoringsystemupes;
+package com.example.attendancemonitoringsystemupes.apiCalls;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,13 +14,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class CoursesTaskApi extends AsyncTask<String, Void, String> {
+public class DetailsApiCall extends AsyncTask<String, Void, String> {
 
-    private static final String LOGIN_URL = "API URL Getting Timetable Information";
+    private static final String LOGIN_URL = "API URL Getting Details";
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
     Context context;
-    public CoursesTaskApi(Context c) {
+    public DetailsApiCall(Context c) {
         context=c;
     }
 
@@ -73,7 +73,7 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             // you can check the result and show a message to the user
             // if login success then navigate to next activity otherwise show error message
             //Received json we can parse here
-           //Add Code
+            //Add Code
             String type="";
             Intent intent;
             if(type=="Faculty") {

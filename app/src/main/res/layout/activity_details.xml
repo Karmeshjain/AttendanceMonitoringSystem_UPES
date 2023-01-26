@@ -22,26 +22,18 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_age"
+        android:id="@+id/tvType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Age: "
+        android:text="Type"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_gender"
+        android:id="@+id/sap_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gender: "
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tv_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address: "
+        android:text="Sap ID"
         android:textSize="20sp"
         android:textStyle="bold" />
 

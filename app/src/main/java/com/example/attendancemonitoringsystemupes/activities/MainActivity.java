@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.attendancemonitoringsystemupes.LoginTask;
+import com.example.attendancemonitoringsystemupes.apiCalls.LoginTask;
 import com.example.attendancemonitoringsystemupes.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etUsername, etPassword;
     private Button btnLogin;
+    public static String token="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
