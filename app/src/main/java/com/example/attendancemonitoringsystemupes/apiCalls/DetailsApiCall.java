@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.attendancemonitoringsystemupes.activities.AttendanceFaculty;
 import com.example.attendancemonitoringsystemupes.activities.StudentAttendanceShow;
@@ -67,6 +68,7 @@ public class DetailsApiCall extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
+
         if (result != null) {
             // parse the response from the API and check if login was successful
             // result could be a JSON object or a plain string, depends on your API
@@ -74,17 +76,10 @@ public class DetailsApiCall extends AsyncTask<String, Void, String> {
             // if login success then navigate to next activity otherwise show error message
             //Received json we can parse here
             //Add Code
-            String type="";
-            Intent intent;
-            if(type=="Faculty") {
-                intent = new Intent(context, AttendanceFaculty.class);
-            }
-            else
-            {
-                intent = new Intent(context, StudentAttendanceShow.class);
-            }
-            intent.putExtra("result_string", result);
-            context.startActivity(intent);
+//            Intent intent=new Intent(context, DetailsActivity.class);;
+//            intent.putExtra("result_string", result);
+//            context.startActivity(intent);
+            Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
         } else {
             // show an error message to the user
         }
