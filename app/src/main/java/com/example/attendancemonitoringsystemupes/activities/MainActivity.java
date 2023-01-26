@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etUsername, etPassword;
     private Button btnLogin;
-    public static String token="";
+    public static String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

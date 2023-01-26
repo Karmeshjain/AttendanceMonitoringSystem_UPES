@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.attendancemonitoringsystemupes.activities.AttendanceFaculty;
+import com.example.attendancemonitoringsystemupes.activities.DetailsActivity;
 import com.example.attendancemonitoringsystemupes.activities.StudentAttendanceShow;
 
 import java.io.BufferedReader;
@@ -19,9 +22,9 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
     private static final String LOGIN_URL = "API URL Getting Timetable Information";
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
-    Context context;
-    public CoursesTaskApi(Context c) {
-        context=c;
+    View.OnClickListener viewOnClick;
+    public CoursesTaskApi(View.OnClickListener c) {
+        viewOnClick=c;
     }
 
     @Override
@@ -73,18 +76,8 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             // you can check the result and show a message to the user
             // if login success then navigate to next activity otherwise show error message
             //Received json we can parse here
-           //Add Code
-            String type="";
-            Intent intent;
-            if(type=="Faculty") {
-                intent = new Intent(context, AttendanceFaculty.class);
-            }
-            else
-            {
-                intent = new Intent(context, StudentAttendanceShow.class);
-            }
-            intent.putExtra("result_string", result);
-            context.startActivity(intent);
+            //Add Code
+            //We can print the result
         } else {
             // show an error message to the user
         }

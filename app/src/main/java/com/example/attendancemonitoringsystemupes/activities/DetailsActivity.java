@@ -2,16 +2,22 @@ package com.example.attendancemonitoringsystemupes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
 import com.example.attendancemonitoringsystemupes.Person;
 import com.example.attendancemonitoringsystemupes.R;
+import com.example.attendancemonitoringsystemupes.apiCalls.DetailsApiCall;
+import com.example.attendancemonitoringsystemupes.apiCalls.LoginTask;
+
+import java.util.concurrent.ExecutionException;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -25,15 +31,27 @@ public class DetailsActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tv_name);
         tvType = findViewById(R.id.tvType);
         tvsapId = findViewById(R.id.sap_id);
-        String resultString = getIntent().getStringExtra("result_string");
-        Person person = parseJSONtoDetails(resultString);
+        String token = getIntent().getStringExtra("result_string");
+        MainActivity.token=token;
+        Person person = parseJSONtoDetails(token);
         tvName.setText("Name: " + person.getName());
         tvType.setText("Type: " + person.getType());
         tvsapId.setText("Address: " + person.getSapId());
 
     }
-    Person parseJSONtoDetails(String result)
+    Person parseJSONtoDetails(String token)
     {
+        DetailsApiCall detailsApiCall = new DetailsApiCall(this);
+        try {
+            String details = detailsApiCall.execute(token).get();//take details json from courseTaskApi
+        } catch (ExecutionException e) {
+            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
         Person person = new Person("Karmesh",  "Student", "500075888");
         for(int i=0;i<5;i++)
         {
@@ -55,8 +73,29 @@ public class DetailsActivity extends AppCompatActivity {
         linearLayout.addView(button, params);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                new CoursesTaskApi(DetailsActivity.this).execute(buttonName);
+            public void onClick(View view)
+            {
+                CoursesTaskApi coursesTaskApi = new CoursesTaskApi(this);
+                String result="";
+                try {
+                    result = coursesTaskApi.execute(MainActivity.token).get();
+                } catch (ExecutionException e) {
+                    Toast.makeText(DetailsActivity.this, "Api Fail", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    Toast.makeText(DetailsActivity.this, "Api Fail", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                String type="Faculty";
+                Intent intent;
+                if(type=="Faculty") {
+                    intent = new Intent(DetailsActivity.this, AttendanceFaculty.class);
+                }
+                else
+                {
+                    intent = new Intent(DetailsActivity.this, StudentAttendanceShow.class);
+                }
+                startActivity(intent);
             }
         });
     }
