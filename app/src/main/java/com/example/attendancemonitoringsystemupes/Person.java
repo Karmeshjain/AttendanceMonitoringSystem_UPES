@@ -5,7 +5,7 @@ public class Person {
     private int age;
     private String gender;
     private String address;
-
+// to store details
     public Person(String name, int age, String gender, String address) {
         this.name = name;
         this.age = age;
