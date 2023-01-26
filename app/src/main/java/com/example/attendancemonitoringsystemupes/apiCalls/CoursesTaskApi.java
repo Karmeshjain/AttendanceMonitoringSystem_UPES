@@ -78,6 +78,7 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             //Received json we can parse here
             //Add Code
             //We can print the result
+            //Main Push
         } else {
             // show an error message to the user
         }
