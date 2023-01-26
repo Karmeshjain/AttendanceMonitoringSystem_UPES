@@ -9,35 +9,32 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.attendancemonitoringsystemupes.CoursesTaskApi;
+import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
 import com.example.attendancemonitoringsystemupes.Person;
 import com.example.attendancemonitoringsystemupes.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
     private TextView tvName;
-    private TextView tvAge;
-    private TextView tvGender;
-    private TextView tvAddress;
+    private TextView tvType;
+    private TextView tvsapId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         tvName = findViewById(R.id.tv_name);
-        tvAge = findViewById(R.id.tv_age);
-        tvGender = findViewById(R.id.tv_gender);
-        tvAddress = findViewById(R.id.tv_address);
+        tvType = findViewById(R.id.tvType);
+        tvsapId = findViewById(R.id.sap_id);
         String resultString = getIntent().getStringExtra("result_string");
         Person person = parseJSONtoDetails(resultString);
         tvName.setText("Name: " + person.getName());
-        tvAge.setText("Age: " + person.getAge());
-        tvGender.setText("Gender: " + person.getGender());
-        tvAddress.setText("Address: " + person.getAddress());
+        tvType.setText("Type: " + person.getType());
+        tvsapId.setText("Address: " + person.getSapId());
 
     }
     Person parseJSONtoDetails(String result)
     {
-        Person person = new Person("John Doe", 30, "Male", "123 Main St, Anytown USA");
+        Person person = new Person("Karmesh",  "Student", "500075888");
         for(int i=0;i<5;i++)
         {
             AddButtonToLayout("NameOfCourse");

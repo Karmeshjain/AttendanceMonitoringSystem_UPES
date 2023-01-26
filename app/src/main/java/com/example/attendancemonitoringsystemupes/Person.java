@@ -2,30 +2,27 @@ package com.example.attendancemonitoringsystemupes;
 
 public class Person {
     private String name;
-    private int age;
-    private String gender;
-    private String address;
-// to store details
-    public Person(String name, int age, String gender, String address) {
+    private String type;
+    private String sapId;
+
+
+    public Person(String name,String type, String sapId) {
         this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.address = address;
+        this.type = type;
+        this.sapId = sapId;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAge() {
-        return age;
+
+
+    public String getType() {
+        return type;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getAddress() {
-        return address;
+    public String getSapId() {
+        return sapId;
     }
 }

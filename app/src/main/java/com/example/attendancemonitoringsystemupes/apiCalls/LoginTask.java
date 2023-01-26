@@ -1,4 +1,4 @@
-package com.example.attendancemonitoringsystemupes;
+package com.example.attendancemonitoringsystemupes.apiCalls;
 
 import android.content.Context;
 import android.content.Intent;
