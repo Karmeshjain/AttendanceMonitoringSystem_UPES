@@ -78,7 +78,7 @@ public class DetailsActivity extends AppCompatActivity {
                 CoursesTaskApi coursesTaskApi = new CoursesTaskApi(this);
                 String result="";
                 try {
-                    result = coursesTaskApi.execute(MainActivity.token).get();
+                    result = coursesTaskApi.execute(MainActivity.token,buttonName).get();
                 } catch (ExecutionException e) {
                     Toast.makeText(DetailsActivity.this, "Api Fail", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();

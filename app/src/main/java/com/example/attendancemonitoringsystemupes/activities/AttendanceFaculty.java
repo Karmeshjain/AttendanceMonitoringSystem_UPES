@@ -31,6 +31,32 @@ public class AttendanceFaculty extends AppCompatActivity {
     private Button submitPhotosButton;
     private TextView courseNameTextView,facultyNameTextView,roomNoTextView;
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_attendance_faculty);
+         courseNameTextView = findViewById(R.id.course_name);
+         facultyNameTextView = findViewById(R.id.facultyName);
+         roomNoTextView = findViewById(R.id.room_no);
+        takePhotosButton = findViewById(R.id.course1);
+        submitPhotosButton = findViewById(R.id.submitPhoto);
+        Intent intent = getIntent();
+        jsonString = intent.getStringExtra("result_string");
+        parseJsonString(jsonString);
+       // takeMultiplePhotos();
+        String result=sendPhotosToApi();
+        submitPhotosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code to execute when the button is clicked
+                Intent showList = new Intent(AttendanceFaculty.this, AttendanceList.class);
+                showList.putExtra("result_string", result);
+                startActivity(showList);
+            }
+        });
+    }
+
     private void takeMultiplePhotos() {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (cameraIntent.resolveActivity(getPackageManager()) != null) {
@@ -64,30 +90,6 @@ public class AttendanceFaculty extends AppCompatActivity {
         // Save a file: path for use with ACTION_VIEW intents
         return image;
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attendance_faculty);
-         courseNameTextView = findViewById(R.id.course_name);
-         facultyNameTextView = findViewById(R.id.facultyName);
-         roomNoTextView = findViewById(R.id.room_no);
-        takePhotosButton = findViewById(R.id.course1);
-        submitPhotosButton = findViewById(R.id.submitPhoto);
-        Intent intent = getIntent();
-        jsonString = intent.getStringExtra("result_string");
-        parseJsonString(jsonString);
-       // takeMultiplePhotos();
-        String result=sendPhotosToApi();
-        submitPhotosButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code to execute when the button is clicked
-                Intent showList = new Intent(AttendanceFaculty.this, AttendanceList.class);
-                showList.putExtra("result_string", result);
-                startActivity(showList);
-            }
-        });
-    }
 
     private String sendPhotosToApi()
     {
@@ -101,7 +103,7 @@ public class AttendanceFaculty extends AppCompatActivity {
         courseNameTextView.setText(courseName);
         facultyNameTextView.setText(facultyName);
         roomNoTextView.setText(roomNo);
-        takePhotosButton.setText("Button name from json");
+        takePhotosButton.setText("Take Photos");
         takePhotosButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

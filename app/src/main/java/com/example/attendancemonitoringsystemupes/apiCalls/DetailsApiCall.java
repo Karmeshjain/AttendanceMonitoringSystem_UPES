@@ -18,8 +18,8 @@ import java.net.URL;
 public class DetailsApiCall extends AsyncTask<String, Void, String> {
 
     private static final String LOGIN_URL = "API URL Getting Details";
-    private static final String USERNAME = "username";
-    private static final String PASSWORD = "password";
+    private static final String TOKEN = "TOKEN";
+    private static final String JSONOBJ = "JSONOBJ";
     Context context;
     public DetailsApiCall(Context c) {
         context=c;
@@ -27,8 +27,8 @@ public class DetailsApiCall extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String username = params[0];
-        String password = params[1];
+        String token = params[0];
+        String ObjRequired = "Details";
 
         try {
             URL url = new URL(LOGIN_URL);
@@ -38,8 +38,8 @@ public class DetailsApiCall extends AsyncTask<String, Void, String> {
             conn.setDoOutput(true);
 
             StringBuilder requestParams = new StringBuilder();
-            requestParams.append(USERNAME).append("=").append(username).append("&");
-            requestParams.append(PASSWORD).append("=").append(password);
+            requestParams.append(TOKEN).append("=").append(token).append("&");
+            requestParams.append(JSONOBJ).append("=").append(ObjRequired);
 
             DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
             wr.writeBytes(requestParams.toString());
