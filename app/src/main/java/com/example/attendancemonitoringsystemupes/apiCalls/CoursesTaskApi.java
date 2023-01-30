@@ -20,8 +20,10 @@ import java.net.URL;
 public class CoursesTaskApi extends AsyncTask<String, Void, String> {
 
     private static final String LOGIN_URL = "API URL Getting Timetable Information";
-    private static final String USERNAME = "username";
-    private static final String PASSWORD = "password";
+    private static final String TOKEN = "TOKEN";
+    private static final String JSONOBJ = "JSONOBJ";
+    private static final String COURSE_NAME = "COURSE_NAME";
+
     View.OnClickListener viewOnClick;
     public CoursesTaskApi(View.OnClickListener c) {
         viewOnClick=c;
@@ -29,8 +31,9 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String username = params[0];
-        String password = params[1];
+        String token = params[0];
+        String courseName=params[1];
+        String ObjRequired = "Course";
 
         try {
             URL url = new URL(LOGIN_URL);
@@ -40,8 +43,9 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             conn.setDoOutput(true);
 
             StringBuilder requestParams = new StringBuilder();
-            requestParams.append(USERNAME).append("=").append(username).append("&");
-            requestParams.append(PASSWORD).append("=").append(password);
+            requestParams.append(TOKEN).append("=").append(token).append("&");
+            requestParams.append(JSONOBJ).append("=").append(ObjRequired);
+            requestParams.append(COURSE_NAME).append("=").append(courseName);
 
             DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
             wr.writeBytes(requestParams.toString());
@@ -78,6 +82,7 @@ public class CoursesTaskApi extends AsyncTask<String, Void, String> {
             //Received json we can parse here
             //Add Code
             //We can print the result
+            //Main Push
         } else {
             // show an error message to the user
         }

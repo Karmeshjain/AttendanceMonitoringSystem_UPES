@@ -14,9 +14,9 @@
         android:theme="@style/Theme.AttendanceMonitoringSystemUpes">
         <activity android:name=".activities.StudentAttendanceShow"></activity>
         <activity android:name=".activities.AttendanceList" />
-        <activity android:name=".activities.AttendanceFaculty" />
+        <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.DetailsActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.AttendanceFaculty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
