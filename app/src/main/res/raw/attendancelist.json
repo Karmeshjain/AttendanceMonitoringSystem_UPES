@@ -1,0 +1,21 @@
+{
+  "className": "Math 101",
+  "attendanceDate": "2023-01-22",
+  "students": [
+    {
+      "studentId": 1,
+      "studentName": "John Doe",
+      "attendanceStatus": true
+    },
+    {
+      "studentId": 2,
+      "studentName": "Jane Doe",
+      "attendanceStatus": false
+    },
+    {
+      "studentId": 3,
+      "studentName": "Bob Smith",
+      "attendanceStatus": true
+    }
+  ]
+}
