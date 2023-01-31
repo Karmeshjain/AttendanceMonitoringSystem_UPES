@@ -5,13 +5,35 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Attendance List" />
+        android:text="Present List" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/presentStudentsRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Absent List" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/absentStudentsRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
 
 
     <TextView
