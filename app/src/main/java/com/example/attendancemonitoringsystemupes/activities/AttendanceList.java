@@ -10,34 +10,42 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.attendancemonitoringsystemupes.R;
 import com.example.attendancemonitoringsystemupes.activities.adapterclass.AbsentStudentsAdapter;
 import com.example.attendancemonitoringsystemupes.activities.adapterclass.PresentStudentsAdapter;
+import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
+import com.example.attendancemonitoringsystemupes.apiCalls.SendAttendanceListApi;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class AttendanceList extends AppCompatActivity {
 
     private TextView studentList;
-    private Button check;
+    private Button check,sendAttendance,commitAttendance;
     private String jsonString;
     private PresentStudentsAdapter presentStudentsAdapter;
     private AbsentStudentsAdapter absentStudentsAdapter;
     private RecyclerView presentStudentsRecyclerView, absentStudentsRecyclerView;
     private List<Student> presentStudentsList, absentStudentsList;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_list);
         presentStudentsRecyclerView = findViewById(R.id.presentStudentsRecyclerView);
         absentStudentsRecyclerView = findViewById(R.id.absentStudentsRecyclerView);
         check=findViewById(R.id.check);
+        sendAttendance=findViewById(R.id.sendAttendance);
+        commitAttendance=findViewById(R.id.commitAttendance);
         presentStudentsList = new ArrayList<>();
         absentStudentsList = new ArrayList<>();
+
         parseJson();
         presentStudentsAdapter = new PresentStudentsAdapter(presentStudentsList);
         absentStudentsAdapter = new AbsentStudentsAdapter(absentStudentsList);
@@ -74,7 +82,33 @@ public class AttendanceList extends AppCompatActivity {
 
             }
         });
+
+        sendAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(this, absentStudents.get(pos).getStudentName() + " clicked!", Toast.LENGTH_SHORT).show();
+                sendAttendanceToApi();
+            }
+        });
     }
+    void sendAttendanceToApi()
+    {
+        String result="";
+        for (Student student : absentStudentsList)
+        {
+            String temp=student.getStudentName() + " - " + student.isAttendanceStatus();
+            result+=temp;
+        }
+        SendAttendanceListApi sendAttendanceListApi = new SendAttendanceListApi(this);
+        try {
+            result = sendAttendanceListApi.execute(MainActivity.token,result).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     void parseJson()
     {
       presentStudentsList.add(new Student(500075888,"Karmesh",true));
