@@ -17,7 +17,8 @@ public class StudentAttendanceShow extends AppCompatActivity {
         setContentView(R.layout.activity_student_attendance_show);
         View attendanceColourView = findViewById(R.id.attendanceColour);
         Intent intent = getIntent();
-        String attendanceJsonStudent= intent.getStringExtra("result_string");
+        String courseName= intent.getStringExtra("result_string");
+
         int present=0;
         if(present==1)
         {

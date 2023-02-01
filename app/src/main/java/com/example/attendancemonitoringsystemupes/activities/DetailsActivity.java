@@ -89,12 +89,14 @@ public class DetailsActivity extends AppCompatActivity {
                 String type="Faculty";
                 Intent intent;
                 if(type=="Faculty") {
+
                     intent = new Intent(DetailsActivity.this, AttendanceFaculty.class);
                 }
                 else
                 {
                     intent = new Intent(DetailsActivity.this, StudentAttendanceShow.class);
                 }
+                intent.putExtra("result_string",buttonName);
                 startActivity(intent);
             }
         });
