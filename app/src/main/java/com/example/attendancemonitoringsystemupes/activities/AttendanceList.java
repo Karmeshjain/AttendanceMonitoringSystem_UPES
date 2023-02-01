@@ -16,6 +16,7 @@ import com.example.attendancemonitoringsystemupes.R;
 import com.example.attendancemonitoringsystemupes.activities.adapterclass.AbsentStudentsAdapter;
 import com.example.attendancemonitoringsystemupes.activities.adapterclass.PresentStudentsAdapter;
 import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
+import com.example.attendancemonitoringsystemupes.apiCalls.LoginTask;
 import com.example.attendancemonitoringsystemupes.apiCalls.SendAttendanceListApi;
 
 import java.io.IOException;
@@ -90,6 +91,15 @@ public class AttendanceList extends AppCompatActivity {
                 sendAttendanceToApi();
             }
         });
+        commitAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendAttendanceToApi();
+                Toast.makeText(AttendanceList.this, "Attendance Has been Successfully Committed", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(AttendanceList.this, LoginTask.class);
+                startActivity(intent);
+            }
+        });
     }
     void sendAttendanceToApi()
     {
@@ -111,12 +121,12 @@ public class AttendanceList extends AppCompatActivity {
 
     void parseJson()
     {
-      presentStudentsList.add(new Student(500075888,"Karmesh",true));
-        presentStudentsList.add(new Student(500075232,"Karmeshjain",false));
+        presentStudentsList.add(new Student(500075888,"Karmesh",true));
+        presentStudentsList.add(new Student(500075232,"Karmeshjain",true));
         presentStudentsList.add(new Student(500075000,"Karmeshduggar",true));
 
         absentStudentsList.add(new Student(500075888,"Jay2",false));
-        absentStudentsList.add(new Student(500075232,"Jay3",true));
+        absentStudentsList.add(new Student(500075232,"Jay3",false));
         absentStudentsList.add(new Student(500075000,"Jay5",false));
 
     }
