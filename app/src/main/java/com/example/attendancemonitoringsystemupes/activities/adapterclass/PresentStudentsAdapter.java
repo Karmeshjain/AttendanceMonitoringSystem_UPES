@@ -40,14 +40,19 @@ public class PresentStudentsAdapter extends RecyclerView.Adapter<PresentStudents
 
     public class PresentStudentViewHolder extends RecyclerView.ViewHolder {
         TextView tvStudentName;
-
+        TextView tvStudentAttendanceStatus;
         public PresentStudentViewHolder(View itemView) {
             super(itemView);
             tvStudentName = itemView.findViewById(R.id.student_name);
+            tvStudentAttendanceStatus=itemView.findViewById(R.id.present_attendance_status);
         }
 
         public void bind(Student student) {
             tvStudentName.setText(student.getStudentName());
+            if(student.isAttendanceStatus()==true)
+                tvStudentAttendanceStatus.setText("true");
+            else
+                tvStudentAttendanceStatus.setText("false");
         }
     }
 

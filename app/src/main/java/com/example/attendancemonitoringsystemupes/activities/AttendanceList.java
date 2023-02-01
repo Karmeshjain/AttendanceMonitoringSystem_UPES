@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.attendancemonitoringsystemupes.R;
@@ -21,6 +23,7 @@ import java.util.List;
 public class AttendanceList extends AppCompatActivity {
 
     private TextView studentList;
+    private Button check;
     private String jsonString;
     private PresentStudentsAdapter presentStudentsAdapter;
     private AbsentStudentsAdapter absentStudentsAdapter;
@@ -32,6 +35,7 @@ public class AttendanceList extends AppCompatActivity {
         setContentView(R.layout.activity_attendance_list);
         presentStudentsRecyclerView = findViewById(R.id.presentStudentsRecyclerView);
         absentStudentsRecyclerView = findViewById(R.id.absentStudentsRecyclerView);
+        check=findViewById(R.id.check);
         presentStudentsList = new ArrayList<>();
         absentStudentsList = new ArrayList<>();
         parseJson();
@@ -42,6 +46,7 @@ public class AttendanceList extends AppCompatActivity {
 
         absentStudentsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         absentStudentsRecyclerView.setAdapter(absentStudentsAdapter);
+
 //        Intent intent = getIntent();
 //        String result = intent.getStringExtra("result_string");
        studentList=findViewById(R.id.showAttendance);
@@ -58,18 +63,27 @@ public class AttendanceList extends AppCompatActivity {
             ex.printStackTrace();
         }
        Log.d("json",jsonString);
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(this, absentStudents.get(pos).getStudentName() + " clicked!", Toast.LENGTH_SHORT).show();
 
+                for (Student student : absentStudentsList) {
+                    Log.d("msg",student.getStudentName() + " - " + student.isAttendanceStatus());
+                }
+
+            }
+        });
     }
     void parseJson()
     {
       presentStudentsList.add(new Student(500075888,"Karmesh",true));
-        presentStudentsList.add(new Student(500075232,"Karmeshjain",true));
+        presentStudentsList.add(new Student(500075232,"Karmeshjain",false));
         presentStudentsList.add(new Student(500075000,"Karmeshduggar",true));
 
-        absentStudentsList.add(new Student(500075888,"Jay2",true));
+        absentStudentsList.add(new Student(500075888,"Jay2",false));
         absentStudentsList.add(new Student(500075232,"Jay3",true));
-        absentStudentsList.add(new Student(500075000,"Jay5",true));
-
+        absentStudentsList.add(new Student(500075000,"Jay5",false));
 
     }
 
