@@ -97,7 +97,7 @@ public class AttendanceList extends AppCompatActivity {
             public void onClick(View view) {
                // sendAttendanceToApi();
                 Toast.makeText(AttendanceList.this, "Attendance Has been Successfully Committed", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(AttendanceList.this, LoginTask.class);
+                Intent intent=new Intent(AttendanceList.this, MainActivity.class);
                 startActivity(intent);
             }
         });

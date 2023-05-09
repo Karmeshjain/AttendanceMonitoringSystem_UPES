@@ -24,6 +24,8 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView tvType;
     private TextView tvsapId;
 
+    private TextView tvCourse;
+
     private Button course1;
 
     private Button course2;
@@ -37,19 +39,32 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         tvName = findViewById(R.id.tv_name);
-        tvType = findViewById(R.id.tvType);
-        tvsapId = findViewById(R.id.sap_id);
+        tvType = findViewById(R.id.tv_type);
+        tvsapId = findViewById(R.id.tv_sapid);
+        tvCourse=findViewById(R.id.tv_course);
+        course1 =findViewById(R.id.course1);
+        course2 =findViewById(R.id.course2);
+        course3 =findViewById(R.id.course3);
+        course4 =findViewById(R.id.course4);
+
         String token = getIntent().getStringExtra("result_string");
+        String type=getIntent().getStringExtra("type");
         MainActivity.token=token;
-        Person person = parseJSONtoDetails(token);
-        tvName.setText("Name: " + person.getName());
-        tvType.setText("Type: " + person.getType());
-        tvsapId.setText("Address: " + person.getSapId());
-        String type="";
+        Person person;
+        if(type.equals("faculty")) {
+            person = parseJSONtoDetails("Mr. Alind", "Faculty", "502374148", token);
+             tvCourse.setText("Designation: Assistant Professor");
+            tvName.setText("Name: " + person.getName());
+            tvType.setText("Type: " + person.getType());
+            tvsapId.setText("SAP ID: " + person.getSapId());
+        }
+        else {
+            person = parseJSONtoDetails("Karmesh", "Student", "500075888", token);
+        }
         goToActivity(course1,type);
-        goToActivity(course1,type);
-        goToActivity(course1,type);
-        goToActivity(course1,type);
+        goToActivity(course2,type);
+        goToActivity(course3,type);
+        goToActivity(course4,type);
 
     }
     void goToActivity(Button button,String type)
@@ -70,19 +85,21 @@ public class DetailsActivity extends AppCompatActivity {
 //                    e.printStackTrace();
 //                }
                 Intent intent;
-                if(type=="Faculty") {
+                if(type.equals("faculty")) {
 
                     intent = new Intent(DetailsActivity.this, AttendanceFaculty.class);
+                    startActivity(intent);
                 }
                 else
                 {
                     intent = new Intent(DetailsActivity.this, StudentAttendanceShow.class);
+                    startActivity(intent);
                 }
-                startActivity(intent);
+
             }
         });
     }
-    Person parseJSONtoDetails(String token)
+    Person parseJSONtoDetails(String name,String type,String sap,String token)
     {
 //        DetailsApiCall detailsApiCall = new DetailsApiCall(this);
 //        try {
@@ -94,8 +111,7 @@ public class DetailsActivity extends AppCompatActivity {
 //            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
 //            e.printStackTrace();
 //        }
-
-        Person person = new Person("Karmesh",  "Student", "500075888");
+        Person person = new Person(name,  type, sap);
 //        AddButtonToLayout("Operating System");
 //        AddButtonToLayout("DBMS");
 //        AddButtonToLayout("GPU");

@@ -50,9 +50,9 @@ public class PresentStudentsAdapter extends RecyclerView.Adapter<PresentStudents
         public void bind(Student student) {
             tvStudentName.setText(student.getStudentName());
             if(student.isAttendanceStatus()==true)
-                tvStudentAttendanceStatus.setText("true");
+                tvStudentAttendanceStatus.setText("True");
             else
-                tvStudentAttendanceStatus.setText("false");
+                tvStudentAttendanceStatus.setText("False");
         }
     }
 
