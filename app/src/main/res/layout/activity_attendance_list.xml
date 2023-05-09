@@ -1,74 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Present List" />
-
+        android:text="Present List"
+        android:textColor="#333333" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/presentStudentsRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="200sp">
-    </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Absent List" />
-
+        android:text="Absent List"
+        android:textColor="#333333"
+        android:layout_marginTop="24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/absentStudentsRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="200sp">
-    </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/showAttendance"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Jay:2,priyanshu:1" />
+        android:text=""
+        android:textColor="#333333"
+ />
 
     <Button
         android:id="@+id/sendAttendance"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send"
         android:textSize="20sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:background="#4285F4"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp" />
 
     <Button
         android:id="@+id/check"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="check"
+        android:text="Check"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:background="#4285F4"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp" />
 
     <Button
         android:id="@+id/commitAttendance"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Commit"
         android:textSize="20sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp" />
 
 </LinearLayout>

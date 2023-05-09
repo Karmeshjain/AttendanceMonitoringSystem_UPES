@@ -7,49 +7,97 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
-        android:src="@drawable/ic_launcher_background" />
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/profilepic" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name: "
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="Name: Jay Gupta"
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="monospace"
+        android:text="Course: B.tech CSE GG"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvType"
+        android:id="@+id/tv_address"
         android:layout_width="match_parent"
+        android:fontFamily="monospace"
         android:layout_height="wrap_content"
-        android:text="Type"
+        android:text="Roll Number: 22"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
         android:textSize="20sp"
         android:textStyle="bold" />
-
     <TextView
-        android:id="@+id/sap_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sap ID"
+        android:text="SAP ID: 500076700"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/course1"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OS"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="DBMS"
+        android:padding="14dp"
+        android:backgroundTint="#00B0FF" />
     <Button
         android:id="@+id/course2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GPU"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Operating System"
+        android:layout_marginBottom="20dp"
+        android:padding="14dp"
+        android:backgroundTint="#00B0FF" />
+    <Button
+        android:id="@+id/course3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Computer networks"
+        android:layout_marginBottom="20dp"
+        android:padding="14dp"
+        android:backgroundTint="#00B0FF" />
+    <Button
+        android:id="@+id/course4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Game Programming"
+        android:layout_marginBottom="20dp"
+        android:padding="14dp"
+        android:backgroundTint="#00B0FF" />
+
 
 </LinearLayout>

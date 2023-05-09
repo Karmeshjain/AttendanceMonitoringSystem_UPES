@@ -88,13 +88,14 @@ public class AttendanceList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(this, absentStudents.get(pos).getStudentName() + " clicked!", Toast.LENGTH_SHORT).show();
-                sendAttendanceToApi();
+                Toast.makeText(AttendanceList.this, "Attendance Has Been Sent", Toast.LENGTH_SHORT).show();
+               // sendAttendanceToApi();
             }
         });
         commitAttendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendAttendanceToApi();
+               // sendAttendanceToApi();
                 Toast.makeText(AttendanceList.this, "Attendance Has been Successfully Committed", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(AttendanceList.this, LoginTask.class);
                 startActivity(intent);
@@ -121,13 +122,13 @@ public class AttendanceList extends AppCompatActivity {
 
     void parseJson()
     {
-        presentStudentsList.add(new Student(500075888,"Karmesh",true));
-        presentStudentsList.add(new Student(500075232,"Karmeshjain",true));
-        presentStudentsList.add(new Student(500075000,"Karmeshduggar",true));
+        presentStudentsList.add(new Student(500075888,"Chirag Sankhala",true));
+        presentStudentsList.add(new Student(500075232,"Tanmay Singhal",true));
+        presentStudentsList.add(new Student(500075000,"Jay Gupta",true));
 
-        absentStudentsList.add(new Student(500075888,"Jay2",false));
-        absentStudentsList.add(new Student(500075232,"Jay3",false));
-        absentStudentsList.add(new Student(500075000,"Jay5",false));
+        absentStudentsList.add(new Student(500075888,"Amritansh Sharma",false));
+        absentStudentsList.add(new Student(500075232,"Devansh Pathak",false));
+        absentStudentsList.add(new Student(500075000,"Ram Sharma",false));
 
     }
 
