@@ -1,7 +1,5 @@
 package com.example.attendancemonitoringsystemupes.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,11 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.attendancemonitoringsystemupes.Person;
 import com.example.attendancemonitoringsystemupes.R;
+import com.example.attendancemonitoringsystemupes.apiCalls.CoursesTaskApi;
 import com.example.attendancemonitoringsystemupes.apiCalls.DetailsApiCall;
-import com.example.attendancemonitoringsystemupes.apiCalls.LoginTask;
 
 import java.util.concurrent.ExecutionException;
 
@@ -24,6 +23,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView tvName;
     private TextView tvType;
     private TextView tvsapId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
