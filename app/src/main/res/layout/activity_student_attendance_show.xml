@@ -7,41 +7,61 @@
     android:padding="16dp"
     android:background="#F5F5F5">
 
-    <TextView
-        android:id="@+id/course_name"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course name:"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#333333" />
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_border"
+        android:padding="16dp"
+        >
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="Course name: DBMS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
 
-    <TextView
-        android:id="@+id/facultyName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Faculty Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:textColor="#666666" />
+        <TextView
+            android:id="@+id/facultyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Faculty Name: XYZ Professor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="#666666" />
 
-    <TextView
-        android:id="@+id/room_no"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Room Number"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:textColor="#666666" />
+        <TextView
+            android:id="@+id/room_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room Number: 10205"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="#666666" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/document"
+            />
+        <Button
+            android:id="@+id/attendanceColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="You are marked as Absent"
+            android:backgroundTint="#FF0000"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:elevation="4dp" />
 
-    <View
-        android:id="@+id/attendanceColour"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_red_dark"
-        android:elevation="4dp" />
-
+    </LinearLayout>
 </LinearLayout>

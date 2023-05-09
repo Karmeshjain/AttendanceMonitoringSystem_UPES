@@ -61,18 +61,18 @@ public class AbsentStudentsAdapter extends RecyclerView.Adapter<AbsentStudentsAd
 
                     if (absentStudents.get(pos).isAttendanceStatus()) {
                         absentStudents.get(pos).setAttendanceStatus(false);
-                        tvStudentAttendanceStatus.setText("false");
+                        tvStudentAttendanceStatus.setText("False");
                     } else {
                         absentStudents.get(pos).setAttendanceStatus(true);
-                        tvStudentAttendanceStatus.setText("true");
+                        tvStudentAttendanceStatus.setText("True");
                     }
 
                 }
             });
             if(student.isAttendanceStatus()==true)
-            tvStudentAttendanceStatus.setText("true");
+            tvStudentAttendanceStatus.setText("True");
             else
-                tvStudentAttendanceStatus.setText("false");
+                tvStudentAttendanceStatus.setText("False");
         }
     }
 

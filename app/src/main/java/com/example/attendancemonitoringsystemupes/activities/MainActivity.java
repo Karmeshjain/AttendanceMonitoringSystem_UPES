@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.attendancemonitoringsystemupes.apiCalls.LoginTask;
 import com.example.attendancemonitoringsystemupes.R;
@@ -33,9 +34,19 @@ public class MainActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
                 //JSON code here
-
-                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                startActivity(intent);
+                Intent intent=new Intent(MainActivity.this, DetailsActivity.class);
+                if(username.equals("Student")) {
+                    intent.putExtra("type","student");
+                    startActivity(intent);
+                }
+                else if(username.equals("Faculty"))
+                {
+                    intent.putExtra("type","faculty");
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Please Fill Correct Details", Toast.LENGTH_SHORT).show();
+                }
               //  new LoginTask(MainActivity.this).execute(username, password);
 
 //                if (username.equals("admin") && password.equals("password")) {
