@@ -9,7 +9,6 @@
 
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="14dp"
@@ -18,35 +17,35 @@
         android:background="@drawable/edittext_border"
         android:padding="16dp"
         >
-    <TextView
-        android:id="@+id/course_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="Course name: DBMS"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#333333" />
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="Course name: DBMS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
 
-    <TextView
-        android:id="@+id/facultyName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Faculty Name: XYZ Professor"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:textColor="#666666" />
+        <TextView
+            android:id="@+id/facultyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Faculty Name: XYZ Professor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="#666666" />
 
-    <TextView
-        android:id="@+id/room_no"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Room Number: 10205"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:textColor="#666666" />
+        <TextView
+            android:id="@+id/room_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room Number: 10205"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="#666666" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="200dp"

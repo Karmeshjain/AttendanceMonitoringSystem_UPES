@@ -9,12 +9,14 @@
     <TextView
         android:id="@+id/student_name"
         android:layout_width="wrap_content"
+        android:fontFamily="monospace"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/present_attendance_status"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"/>

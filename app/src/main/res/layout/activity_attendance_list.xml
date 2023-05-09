@@ -20,7 +20,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/presentStudentsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:elevation="4dp"
         android:background="#FFFFFF"
         android:layout_marginTop="16dp" />
@@ -39,7 +39,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/absentStudentsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:elevation="4dp"
         android:background="#FFFFFF"
         android:layout_marginTop="16dp" />
@@ -54,7 +54,7 @@
         android:gravity="center"
         android:text=""
         android:textColor="#333333"
- />
+        />
 
     <Button
         android:id="@+id/sendAttendance"
@@ -76,6 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Check"
+        android:visibility="gone"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"

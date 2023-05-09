@@ -73,6 +73,8 @@ public class AttendanceFaculty extends AppCompatActivity {
         imageAdapter = new ImageAdapter(this, imageList);
         recyclerView.setAdapter(imageAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        courseNameTextView.setText("Course Name");
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             // Request camera permission
@@ -95,7 +97,7 @@ public class AttendanceFaculty extends AppCompatActivity {
                 // Code to execute when the button is clicked
              //   ImageSenderApiCall();
                 Intent showList = new Intent(AttendanceFaculty.this, AttendanceList.class);
-                showList.putExtra("result_string", String.valueOf(attendanceListJson));
+                //showList.putExtra("result_string", String.valueOf(attendanceListJson));
                 startActivity(showList);
             }
         });
