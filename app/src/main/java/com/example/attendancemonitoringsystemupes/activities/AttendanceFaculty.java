@@ -93,7 +93,7 @@ public class AttendanceFaculty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Code to execute when the button is clicked
-                ImageSenderApiCall();
+             //   ImageSenderApiCall();
                 Intent showList = new Intent(AttendanceFaculty.this, AttendanceList.class);
                 showList.putExtra("result_string", String.valueOf(attendanceListJson));
                 startActivity(showList);

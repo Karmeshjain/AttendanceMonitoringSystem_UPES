@@ -2,6 +2,7 @@ package com.example.attendancemonitoringsystemupes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
                 //JSON code here
-                new LoginTask(MainActivity.this).execute(username, password);
+
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                startActivity(intent);
+              //  new LoginTask(MainActivity.this).execute(username, password);
 
 //                if (username.equals("admin") && password.equals("password")) {
 //                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();

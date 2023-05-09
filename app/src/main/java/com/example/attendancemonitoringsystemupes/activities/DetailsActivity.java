@@ -24,6 +24,14 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView tvType;
     private TextView tvsapId;
 
+    private Button course1;
+
+    private Button course2;
+
+    private Button course3;
+
+    private Button course4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,26 +45,60 @@ public class DetailsActivity extends AppCompatActivity {
         tvName.setText("Name: " + person.getName());
         tvType.setText("Type: " + person.getType());
         tvsapId.setText("Address: " + person.getSapId());
+        String type="";
+        goToActivity(course1,type);
+        goToActivity(course1,type);
+        goToActivity(course1,type);
+        goToActivity(course1,type);
 
+    }
+    void goToActivity(Button button,String type)
+    {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+//                CoursesTaskApi coursesTaskApi = new CoursesTaskApi(this);
+//                String result="";
+//                try {
+//                    result = coursesTaskApi.execute(MainActivity.token,buttonName).get();
+//                } catch (ExecutionException e) {
+//                    Toast.makeText(DetailsActivity.this, "Api Fail", Toast.LENGTH_SHORT).show();
+//                    e.printStackTrace();
+//                } catch (InterruptedException e) {
+//                    Toast.makeText(DetailsActivity.this, "Api Fail", Toast.LENGTH_SHORT).show();
+//                    e.printStackTrace();
+//                }
+                Intent intent;
+                if(type=="Faculty") {
+
+                    intent = new Intent(DetailsActivity.this, AttendanceFaculty.class);
+                }
+                else
+                {
+                    intent = new Intent(DetailsActivity.this, StudentAttendanceShow.class);
+                }
+                startActivity(intent);
+            }
+        });
     }
     Person parseJSONtoDetails(String token)
     {
-        DetailsApiCall detailsApiCall = new DetailsApiCall(this);
-        try {
-            String details = detailsApiCall.execute(token).get();//take details json from courseTaskApi
-        } catch (ExecutionException e) {
-            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
+//        DetailsApiCall detailsApiCall = new DetailsApiCall(this);
+//        try {
+//            String details = detailsApiCall.execute(token).get();//take details json from courseTaskApi
+//        } catch (ExecutionException e) {
+//            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
+//            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            Toast.makeText(this, "API Fail", Toast.LENGTH_SHORT).show();
+//            e.printStackTrace();
+//        }
 
         Person person = new Person("Karmesh",  "Student", "500075888");
-        for(int i=0;i<5;i++)
-        {
-            AddButtonToLayout("NameOfCourse");
-        }
+//        AddButtonToLayout("Operating System");
+//        AddButtonToLayout("DBMS");
+//        AddButtonToLayout("GPU");
         return person;
     }
     void AddButtonToLayout(String buttonName)
