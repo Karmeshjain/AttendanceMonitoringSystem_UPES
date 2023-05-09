@@ -20,7 +20,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/presentStudentsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="160dp"
         android:elevation="4dp"
         android:background="#FFFFFF"
         android:layout_marginTop="16dp" />
@@ -39,7 +39,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/absentStudentsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="160dp"
         android:elevation="4dp"
         android:background="#FFFFFF"
         android:layout_marginTop="16dp" />

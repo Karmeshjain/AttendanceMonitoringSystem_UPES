@@ -125,10 +125,15 @@ public class AttendanceList extends AppCompatActivity {
         presentStudentsList.add(new Student(500075888,"Chirag Sankhala",true));
         presentStudentsList.add(new Student(500075232,"Tanmay Singhal",true));
         presentStudentsList.add(new Student(500075000,"Jay Gupta",true));
+        presentStudentsList.add(new Student(500075222,"Aditya Chaudhry",true));
+        presentStudentsList.add(new Student(500075066,"Ishan Sharma",true));
+
 
         absentStudentsList.add(new Student(500075888,"Amritansh Sharma",false));
         absentStudentsList.add(new Student(500075232,"Devansh Pathak",false));
         absentStudentsList.add(new Student(500075000,"Ram Sharma",false));
+        absentStudentsList.add(new Student(500075232,"Mohit Gupta",false));
+        absentStudentsList.add(new Student(500075000,"Jiya Jain",false));
 
     }
 
