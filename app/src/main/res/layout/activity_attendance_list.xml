@@ -13,6 +13,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
+        android:fontFamily="monospace"
         android:text="Present List"
         android:textColor="#333333" />
 
@@ -32,6 +33,7 @@
         android:gravity="center"
         android:text="Absent List"
         android:textColor="#333333"
+        android:fontFamily="monospace"
         android:layout_marginTop="24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -45,6 +47,7 @@
     <TextView
         android:id="@+id/showAttendance"
         android:layout_width="wrap_content"
+        android:fontFamily="monospace"
         android:layout_height="0dp"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -56,37 +59,46 @@
     <Button
         android:id="@+id/sendAttendance"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Send"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:background="#4285F4"
         android:textColor="#FFFFFF"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="8dp"
+        android:backgroundTint="#00B0FF"
         android:elevation="4dp" />
 
     <Button
         android:id="@+id/check"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Check"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:background="#4285F4"
+        android:layout_marginTop="5dp"
         android:textColor="#FFFFFF"
-        android:elevation="4dp" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="8dp"
+        android:backgroundTint="#00B0FF"
+        android:elevation="4dp"  />
 
     <Button
         android:id="@+id/commitAttendance"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Commit"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:background="#4CAF50"
+        android:layout_marginTop="5dp"
         android:textColor="#FFFFFF"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="8dp"
+        android:backgroundTint="#00B0FF"
         android:elevation="4dp" />
 
 </LinearLayout>
